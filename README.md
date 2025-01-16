@@ -6,13 +6,19 @@ Saya menggunakan Node Version `v20.16.0`
 
 Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut:
 
-1. Install package
+1. Masuk ke direktori frontend
+
+```bash
+   cd frontend
+```
+
+2. Install package
 
    ```bash
    npm install
    ```
 
-2. Jalankan pada development
+3. Jalankan pada development
 
    ```bash
    npm run dev
