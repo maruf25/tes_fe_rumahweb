@@ -28,6 +28,3 @@ Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut
 ## Deployment
 
 [Website](https://tes-fe-rumahweb.vercel.app/)
-
-Mohon maaf karena deployment dan pembuatan masih kurang maksimal
-Terdapat error pada deployment website, yaitu ketika mengetikkan manual ke /users atau kembali ke path /users muncul not found
