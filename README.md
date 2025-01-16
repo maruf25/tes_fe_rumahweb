@@ -24,3 +24,9 @@ Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut
 2. Semua logika program dan tampilan terdapat pada direktori komponen sesuai dengan fitur yang ingin ditampilkan
 3. View digunakan untuk menampilkan halaman dengan cara import component
 4. Setiap view didaftarkan pada direktori router agar bisa diakses melalui router yang telah disesuaikan
+
+## Deployment
+
+[Website](https://tesferumahwebsite.vercel.app/)
+
+Mohon maaf karena deployment dan pembuatan masih kurang maksimal
