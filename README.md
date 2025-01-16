@@ -6,19 +6,13 @@ Saya menggunakan Node Version `v20.16.0`
 
 Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut:
 
-1. Masuk ke direktori frontend
-
-   ```bash
-      cd frontend
-   ```
-
-2. Install package
+1. Install package
 
    ```bash
    npm install
    ```
 
-3. Jalankan pada development
+2. Jalankan pada development
 
    ```bash
    npm run dev
@@ -33,7 +27,7 @@ Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut
 
 ## Deployment
 
-[Website](https://tesferumahwebsite.vercel.app/)
+[Website](https://tes-fe-rumahweb.vercel.app/)
 
 Mohon maaf karena deployment dan pembuatan masih kurang maksimal
 Terdapat error pada deployment website, yaitu ketika mengetikkan manual ke /users atau kembali ke path /users muncul not found
