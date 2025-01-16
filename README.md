@@ -8,9 +8,9 @@ Untuk menjalankan bagian frontend dari proyek ini, ikuti langkah-langkah berikut
 
 1. Masuk ke direktori frontend
 
-```bash
-   cd frontend
-```
+   ```bash
+      cd frontend
+   ```
 
 2. Install package
 
