@@ -18,6 +18,9 @@ const getUser = async () => {
     }
 
     const data = await response.json();
+    console.log(data);
+    console.log(data.address.street);
+
     user.value = data;
   } catch (error) {
     console.log(error);
@@ -25,7 +28,7 @@ const getUser = async () => {
 };
 
 watch(
-  () => route.params.id,
+  () => [route.params.id],
   () => {
     getUser();
   },
@@ -34,15 +37,19 @@ watch(
 </script>
 
 <template>
+  <div class="w-full p-4 text-xl font-bold text-black i">
+    <RouterLink :to="{ path: '/users' }">
+      <div class="inline-block p-2 text-white bg-blue-500 rounded-lg">back</div>
+    </RouterLink>
+    <h1>Detail User</h1>
+  </div>
+
+  <div v-if="Object.keys(user).length === 0" class="flex items-center justify-center h-96">
+    <h1 class="text-2xl font-bold">Users is empty</h1>
+  </div>
+
   <div class="p-4">
-    <div class="text-black text-xl p-4 font-bold">
-      <a href="/users"> <div class="text-blue-500">back</div></a>
-      <!-- <RouterLink :to="{ path: '/users' }" replace>
-        <div class="text-blue-500">back</div>
-      </RouterLink> -->
-      <h1>User Profile</h1>
-    </div>
-    <div class="bg-red-200 rounded-lg shadow-md p-4 gap-4">
+    <div v-if="Object.keys(user).length > 0" class="p-4 bg-red-200 rounded-lg shadow-md">
       <h1>Name : {{ user.name }}</h1>
       <h1>Email :{{ user.email }}</h1>
       <h1>

@@ -1,15 +1,14 @@
 <script setup>
-import { ref, watch } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
 const users = ref([]);
 const search = ref("");
-const route = useRoute();
 
 const getUsers = async () => {
   let url = "https://jsonplaceholder.typicode.com/users";
   if (search.value !== "") {
     url = "https://jsonplaceholder.typicode.com/users?email=" + search.value;
   }
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -27,35 +26,34 @@ const getUsers = async () => {
   }
 };
 
-watch(
-  () => [search.value, route.path],
-  () => {
-    getUsers();
-  },
-  { immediate: true }
-);
+onMounted(() => {
+  getUsers();
+});
 
-const inputSearch = (e) => {
-  const { value } = e.target;
-
-  search.value = value;
+const perfomSearch = () => {
+  getUsers();
 };
 </script>
 
 <template>
-  <div class="flex w-full text-black text-xl font-bold p-4 justify-between items-center">
+  <div class="flex items-center justify-between w-full p-4 text-xl font-bold text-black">
     <h1>Users</h1>
     <div>
       <input
-        class="p-2 border rounded-lg"
+        class="p-2 font-medium border rounded-lg text-md"
         id="search"
         name="search"
         type="text"
         placeholder="search by email"
         v-model="search"
-        @input="inputSearch"
+        @keyup.enter="perfomSearch"
       />
-      <!-- <button class="bg-blue-500">Search</button> -->
+      <button
+        class="p-2 ml-4 font-medium text-white bg-blue-500 rounded-lg text-md"
+        @click="perfomSearch"
+      >
+        Search
+      </button>
     </div>
   </div>
 
@@ -67,7 +65,7 @@ const inputSearch = (e) => {
     <div v-for="user in users" :key="user">
       <RouterLink :to="{ name: 'DetailsUser', params: { id: user.id } }" replace>
         <!-- <RouterLink :to="{ path:"/users/" + user.id}"> -->
-        <div class="bg-red-200 p-4 rounded-lg m-4 shadow-lg">
+        <div class="p-4 m-4 bg-red-200 rounded-lg shadow-lg">
           <h1>Name : {{ user.name }}</h1>
           <h1>Email : {{ user.email }}</h1>
           <h1>

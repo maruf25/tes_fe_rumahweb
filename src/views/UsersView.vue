@@ -3,7 +3,5 @@ import UsersComponent from "../components/Users.vue";
 </script>
 
 <template>
-  <main>
-    <UsersComponent />
-  </main>
+  <UsersComponent />
 </template>
